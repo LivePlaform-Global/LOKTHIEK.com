@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LOKTHIEK.com - Comprehensive Web Features Demo">
+    <title>LOKTHIEK.com - Interactive Web Features</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">LOKTHIEK.com</div>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#demos">Demos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1 class="hero-title">Welcome to LOKTHIEK.com</h1>
+            <p class="hero-subtitle">Comprehensive Interactive Web Features & Button Framework</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="showModal('welcomeModal')">Get Started</button>
+                <button class="btn btn-secondary" onclick="scrollToSection('features')">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Interactive Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Copy to Clipboard</h3>
+                    <p>Easily copy text with one click</p>
+                    <input type="text" id="copyText" value="Sample text to copy" readonly>
+                    <button class="btn btn-small" onclick="copyToClipboard()">Copy</button>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Notifications</h3>
+                    <p>Show toast notifications</p>
+                    <button class="btn btn-small" onclick="showToast('Success!', 'success')">Success</button>
+                    <button class="btn btn-small" onclick="showToast('Warning!', 'warning')">Warning</button>
+                    <button class="btn btn-small" onclick="showToast('Error!', 'error')">Error</button>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Search Functionality</h3>
+                    <p>Real-time search with filters</p>
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Search...">
+                        <button class="btn btn-small" onclick="performSearch()">Search</button>
+                    </div>
+                    <div id="searchResults"></div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💾</div>
+                    <h3>Download & Upload</h3>
+                    <p>File operations</p>
+                    <button class="btn btn-small" onclick="downloadFile()">Download Sample</button>
+                    <input type="file" id="fileUpload" style="display:none" onchange="handleFileUpload(event)">
+                    <button class="btn btn-small" onclick="document.getElementById('fileUpload').click()">Upload File</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabs Section -->
+    <section class="demos" id="demos">
+        <div class="container">
+            <h2 class="section-title">Interactive Components Demos</h2>
+            
+            <!-- Tabs Component -->
+            <div class="tabs-container">
+                <div class="tabs-header">
+                    <button class="tab-button active" onclick="switchTab(0)">Tab 1</button>
+                    <button class="tab-button" onclick="switchTab(1)">Tab 2</button>
+                    <button class="tab-button" onclick="switchTab(2)">Tab 3</button>
+                </div>
+                <div class="tabs-content">
+                    <div class="tab-pane active">
+                        <h3>Tab 1 Content</h3>
+                        <p>This is the content for the first tab. It demonstrates tabbed navigation.</p>
+                    </div>
+                    <div class="tab-pane">
+                        <h3>Tab 2 Content</h3>
+                        <p>This is the content for the second tab with different information.</p>
+                    </div>
+                    <div class="tab-pane">
+                        <h3>Tab 3 Content</h3>
+                        <p>This is the content for the third tab showing more features.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion Component -->
+            <div class="accordion-container">
+                <h3>Accordion Component</h3>
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>What is LOKTHIEK.com?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>LOKTHIEK.com is a comprehensive web features demonstration showcasing various interactive button types and UI components.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>How do I use these features?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Simply click on any button or interactive element to see it in action. All features are fully functional.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>Can I customize these components?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes! All components are built with clean, modular code that can be easily customized to fit your needs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Component -->
+            <div class="carousel-container">
+                <h3>Image Carousel</h3>
+                <div class="carousel">
+                    <button class="carousel-btn prev" onclick="moveCarousel(-1)">❮</button>
+                    <div class="carousel-content">
+                        <div class="carousel-slide active">
+                            <div class="carousel-placeholder">Slide 1</div>
+                            <p>First carousel item</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="carousel-placeholder">Slide 2</div>
+                            <p>Second carousel item</p>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="carousel-placeholder">Slide 3</div>
+                            <p>Third carousel item</p>
+                        </div>
+                    </div>
+                    <button class="carousel-btn next" onclick="moveCarousel(1)">❯</button>
+                </div>
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="currentSlide(0)"></span>
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                </div>
+            </div>
+
+            <!-- Dropdown & Select -->
+            <div class="dropdown-container">
+                <h3>Dropdown & Select Components</h3>
+                <div class="dropdown">
+                    <button class="dropdown-toggle" onclick="toggleDropdown()">
+                        Select Action
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <ul class="dropdown-menu" id="dropdownMenu">
+                        <li><a href="#" onclick="handleDropdownAction('Edit')">Edit</a></li>
+                        <li><a href="#" onclick="handleDropdownAction('Delete')">Delete</a></li>
+                        <li><a href="#" onclick="handleDropdownAction('Share')">Share</a></li>
+                        <li><a href="#" onclick="handleDropdownAction('Export')">Export</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Media Controls -->
+            <div class="media-controls">
+                <h3>Media Controls</h3>
+                <div class="media-player">
+                    <button class="btn btn-icon" onclick="togglePlayPause()" id="playPauseBtn">
+                        <span id="playPauseIcon">▶️</span> Play
+                    </button>
+                    <button class="btn btn-icon" onclick="stopMedia()">⏹️ Stop</button>
+                    <button class="btn btn-icon" onclick="previousTrack()">⏮️ Previous</button>
+                    <button class="btn btn-icon" onclick="nextTrack()">⏭️ Next</button>
+                </div>
+            </div>
+
+            <!-- Filter & Sort -->
+            <div class="filter-sort-container">
+                <h3>Filter & Sort</h3>
+                <div class="filter-buttons">
+                    <button class="btn btn-filter active" onclick="filterItems('all')">All</button>
+                    <button class="btn btn-filter" onclick="filterItems('featured')">Featured</button>
+                    <button class="btn btn-filter" onclick="filterItems('new')">New</button>
+                    <button class="btn btn-filter" onclick="filterItems('popular')">Popular</button>
+                </div>
+                <div class="sort-buttons">
+                    <button class="btn btn-small" onclick="sortItems('name')">Sort by Name</button>
+                    <button class="btn btn-small" onclick="sortItems('date')">Sort by Date</button>
+                </div>
+                <div id="itemsList" class="items-list">
+                    <div class="item" data-category="featured">Featured Item 1</div>
+                    <div class="item" data-category="new">New Item 2</div>
+                    <div class="item" data-category="popular">Popular Item 3</div>
+                    <div class="item" data-category="featured">Featured Item 4</div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination-container">
+                <h3>Pagination</h3>
+                <div class="pagination">
+                    <button class="btn btn-small" onclick="changePage(-1)">Previous</button>
+                    <button class="page-btn active" onclick="goToPage(1)">1</button>
+                    <button class="page-btn" onclick="goToPage(2)">2</button>
+                    <button class="page-btn" onclick="goToPage(3)">3</button>
+                    <button class="page-btn" onclick="goToPage(4)">4</button>
+                    <button class="btn btn-small" onclick="changePage(1)">Next</button>
+                </div>
+            </div>
+
+            <!-- Social & Action Buttons -->
+            <div class="social-actions">
+                <h3>Social & Action Buttons</h3>
+                <div class="action-buttons">
+                    <button class="btn btn-icon" onclick="likeAction()">
+                        <span id="likeIcon">❤️</span> Like <span id="likeCount">(0)</span>
+                    </button>
+                    <button class="btn btn-icon" onclick="shareAction()">📤 Share</button>
+                    <button class="btn btn-icon" onclick="printPage()">🖨️ Print</button>
+                    <button class="btn btn-icon" onclick="exportData()">📊 Export</button>
+                    <button class="btn btn-icon" onclick="importData()">📥 Import</button>
+                </div>
+            </div>
+
+            <!-- Expand/Collapse -->
+            <div class="expand-container">
+                <h3>Expand/Collapse Content</h3>
+                <div class="expandable-content">
+                    <div class="preview-text" id="previewText">
+                        This is a preview of the content. Click the button below to see more...
+                    </div>
+                    <div class="full-text hidden" id="fullText">
+                        This is the full content that was hidden. It contains additional information and details that users can view by expanding the section. This pattern is useful for long-form content.
+                    </div>
+                    <button class="btn btn-small" onclick="toggleExpand()" id="expandBtn">Show More</button>
+                </div>
+            </div>
+
+            <!-- Loading States -->
+            <div class="loading-demo">
+                <h3>Loading States</h3>
+                <button class="btn btn-primary" onclick="simulateLoading(this)">
+                    <span class="btn-text">Click to Load</span>
+                    <span class="spinner hidden"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+                <button type="reset" class="btn btn-secondary">Reset Form</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>LOKTHIEK.com</h4>
+                    <p>Comprehensive web features demonstration</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#demos">Demos</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-buttons">
+                        <button class="social-btn" onclick="openSocial('facebook')" aria-label="Facebook">f</button>
+                        <button class="social-btn" onclick="openSocial('twitter')" aria-label="Twitter">𝕏</button>
+                        <button class="social-btn" onclick="openSocial('linkedin')" aria-label="LinkedIn">in</button>
+                        <button class="social-btn" onclick="openSocial('github')" aria-label="GitHub">⚡</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LOKTHIEK.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTopBtn" onclick="scrollToTop()" aria-label="Scroll to top">
+        ↑
+    </button>
+
+    <!-- Modal Template -->
+    <div class="modal" id="welcomeModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('welcomeModal')">&times;</button>
+            <h2>Welcome to LOKTHIEK.com</h2>
+            <p>This is a comprehensive demonstration of interactive web features and button frameworks.</p>
+            <p>Explore all the different components and see how they work!</p>
+            <button class="btn btn-primary" onclick="closeModal('welcomeModal')">Get Started</button>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
