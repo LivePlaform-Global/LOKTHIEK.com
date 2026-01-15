@@ -119,16 +119,27 @@ function copyToClipboard() {
     const copyText = document.getElementById('copyText');
     copyText.select();
     
-    try {
-        document.execCommand('copy');
-        showToast('Text copied to clipboard!', 'success');
-    } catch (err) {
-        // Fallback for modern browsers
+    // Use modern Clipboard API with fallback
+    if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(copyText.value).then(() => {
             showToast('Text copied to clipboard!', 'success');
         }).catch(() => {
-            showToast('Failed to copy text', 'error');
+            // Fallback to execCommand for older browsers
+            try {
+                document.execCommand('copy');
+                showToast('Text copied to clipboard!', 'success');
+            } catch (err) {
+                showToast('Failed to copy text', 'error');
+            }
         });
+    } else {
+        // Fallback for older browsers
+        try {
+            document.execCommand('copy');
+            showToast('Text copied to clipboard!', 'success');
+        } catch (err) {
+            showToast('Failed to copy text', 'error');
+        }
     }
 }
 
