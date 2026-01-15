@@ -209,7 +209,7 @@ function moveCarousel(direction) {
     dots[currentSlide].classList.add('active');
 }
 
-function currentSlide(index) {
+function goToSlide(index) {
     const slides = document.querySelectorAll('.carousel-slide');
     const dots = document.querySelectorAll('.dot');
     
