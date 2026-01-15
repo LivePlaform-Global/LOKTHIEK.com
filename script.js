@@ -591,7 +591,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===== DETECT MOBILE DEVICE =====
     
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (isMobile) {
+    if (isMobile && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
         console.log('Mobile device detected');
         // Add mobile-specific features here
     }
@@ -600,15 +600,21 @@ document.addEventListener('DOMContentLoaded', function() {
     
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            console.log('Page is hidden');
+            // Page is hidden - can pause animations, stop API calls, etc.
         } else {
-            console.log('Page is visible');
+            // Page is visible - can resume animations, restart API calls, etc.
         }
     });
     
     // ===== CONSOLE MESSAGE =====
     
-    console.log('%cLOKTHIEK.com', 'color: #4a90e2; font-size: 24px; font-weight: bold;');
-    console.log('%cComprehensive Web Framework', 'color: #50c878; font-size: 14px;');
-    console.log('All features are loaded and ready to use!');
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        console.log('%cLOKTHIEK.com', 'color: #4a90e2; font-size: 24px; font-weight: bold;');
+        console.log('%cComprehensive Web Framework', 'color: #50c878; font-size: 14px;');
+        console.log('All features are loaded and ready to use!');
+    }
+    
+    // ===== SET CURRENT YEAR =====
+    
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
 });
