@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LOKTHIEK.com - Professional Web Solutions">
+    <title>LOKTHIEK.com - Complete Web Framework</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="#home">LOKTHIEK.com</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to LOKTHIEK.com</h1>
+                <p class="hero-subtitle">Your Complete Web Framework Solution</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" id="getStartedBtn">Get Started</button>
+                    <button class="btn btn-secondary" id="learnMoreBtn">Learn More</button>
+                    <button class="btn btn-outline" id="watchVideoBtn">
+                        <i class="fas fa-play"></i> Watch Video
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Our Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-code feature-icon"></i>
+                    <h3>Modern Development</h3>
+                    <p>Built with latest web technologies</p>
+                    <button class="btn btn-small">Read More</button>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt feature-icon"></i>
+                    <h3>Responsive Design</h3>
+                    <p>Works on all devices and screen sizes</p>
+                    <button class="btn btn-small">Read More</button>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-rocket feature-icon"></i>
+                    <h3>Fast Performance</h3>
+                    <p>Optimized for speed and efficiency</p>
+                    <button class="btn btn-small">Read More</button>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h3>Secure & Safe</h3>
+                    <p>Enterprise-level security standards</p>
+                    <button class="btn btn-small">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Components Section -->
+    <section id="services" class="interactive-section">
+        <div class="container">
+            <h2 class="section-title">Interactive Components</h2>
+            
+            <!-- Tabs Component -->
+            <div class="tabs-container">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="tab1">Basic Features</button>
+                    <button class="tab-btn" data-tab="tab2">Advanced Tools</button>
+                    <button class="tab-btn" data-tab="tab3">API Integration</button>
+                </div>
+                <div class="tabs-content">
+                    <div class="tab-pane active" id="tab1">
+                        <h3>Basic Features</h3>
+                        <p>Essential tools for everyday use including forms, buttons, and navigation components.</p>
+                        <button class="btn btn-primary">Explore Basic</button>
+                    </div>
+                    <div class="tab-pane" id="tab2">
+                        <h3>Advanced Tools</h3>
+                        <p>Professional-grade features like data visualization, real-time updates, and more.</p>
+                        <button class="btn btn-primary">Explore Advanced</button>
+                    </div>
+                    <div class="tab-pane" id="tab3">
+                        <h3>API Integration</h3>
+                        <p>Seamless integration with third-party services and RESTful APIs.</p>
+                        <button class="btn btn-primary">View APIs</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accordion Component -->
+            <div class="accordion-container">
+                <h3>Frequently Asked Questions</h3>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>What is LOKTHIEK.com?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>LOKTHIEK.com is a comprehensive web framework that provides all the tools and components you need to build modern websites.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>How do I get started?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Simply click the "Get Started" button and follow our easy setup guide. You'll be up and running in minutes!</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Is it mobile-friendly?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes! Our framework is fully responsive and works perfectly on all devices, from mobile phones to desktop computers.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons Grid -->
+            <div class="action-buttons-section">
+                <h3>Action Buttons</h3>
+                <div class="button-grid">
+                    <button class="btn btn-success" id="downloadBtn">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                    <button class="btn btn-danger" id="uploadBtn">
+                        <i class="fas fa-upload"></i> Upload
+                    </button>
+                    <button class="btn btn-info" id="shareBtn">
+                        <i class="fas fa-share-alt"></i> Share
+                    </button>
+                    <button class="btn btn-warning" id="printBtn">
+                        <i class="fas fa-print"></i> Print
+                    </button>
+                    <button class="btn btn-primary" id="copyBtn" data-copy="LOKTHIEK.com">
+                        <i class="fas fa-copy"></i> Copy Text
+                    </button>
+                    <button class="btn btn-secondary" id="exportBtn">
+                        <i class="fas fa-file-export"></i> Export
+                    </button>
+                    <button class="btn btn-success" id="likeBtn">
+                        <i class="far fa-heart"></i> Like
+                    </button>
+                    <button class="btn btn-primary" id="notifyBtn">
+                        <i class="fas fa-bell"></i> Notify
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery/Carousel Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Image Gallery</h2>
+            <div class="carousel">
+                <button class="carousel-btn prev" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="carousel-track-container">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="carousel-slide active">
+                            <div class="slide-content">
+                                <h3>Slide 1</h3>
+                                <p>Modern Web Design</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <h3>Slide 2</h3>
+                                <p>Responsive Layout</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <h3>Slide 3</h3>
+                                <p>Interactive Features</p>
+                            </div>
+                        </div>
+                        <div class="carousel-slide">
+                            <div class="slide-content">
+                                <h3>Slide 4</h3>
+                                <p>Advanced Components</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="carousel-indicators" id="carouselIndicators"></div>
+            </div>
+
+            <!-- Filtering and Sorting -->
+            <div class="filter-section">
+                <h3>Content Filtering</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                    <button class="filter-btn" data-filter="development">Development</button>
+                    <button class="filter-btn" data-filter="marketing">Marketing</button>
+                </div>
+                <div class="sort-buttons">
+                    <label>Sort by:</label>
+                    <button class="sort-btn" data-sort="name">Name</button>
+                    <button class="sort-btn" data-sort="date">Date</button>
+                    <button class="sort-btn" data-sort="popular">Popular</button>
+                </div>
+                <div class="filter-grid" id="filterGrid">
+                    <div class="filter-item" data-category="design">
+                        <h4>Design Item 1</h4>
+                        <p>Beautiful design work</p>
+                    </div>
+                    <div class="filter-item" data-category="development">
+                        <h4>Development Item 1</h4>
+                        <p>Clean code solutions</p>
+                    </div>
+                    <div class="filter-item" data-category="marketing">
+                        <h4>Marketing Item 1</h4>
+                        <p>Strategic campaigns</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">Service</label>
+                    <select id="service" name="service">
+                        <option value="">Select a service</option>
+                        <option value="web-design">Web Design</option>
+                        <option value="development">Development</option>
+                        <option value="consulting">Consulting</option>
+                        <option value="support">Support</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="subscribe" name="subscribe">
+                    <label for="subscribe">Subscribe to newsletter</label>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                    <button type="reset" class="btn btn-secondary">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                </div>
+            </form>
+
+            <!-- Search Component -->
+            <div class="search-section">
+                <h3>Search</h3>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                    <button class="btn btn-primary" id="searchBtn">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                    <button class="btn btn-secondary" id="clearSearchBtn">
+                        <i class="fas fa-times"></i> Clear
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pagination Section -->
+    <section class="pagination-section">
+        <div class="container">
+            <div class="pagination" id="pagination">
+                <button class="pagination-btn" data-page="prev">
+                    <i class="fas fa-chevron-left"></i> Previous
+                </button>
+                <button class="pagination-btn active" data-page="1">1</button>
+                <button class="pagination-btn" data-page="2">2</button>
+                <button class="pagination-btn" data-page="3">3</button>
+                <button class="pagination-btn" data-page="4">4</button>
+                <button class="pagination-btn" data-page="5">5</button>
+                <button class="pagination-btn" data-page="next">
+                    Next <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LOKTHIEK.com</h3>
+                    <p>Building the future of web development</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-buttons">
+                        <button class="social-btn" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </button>
+                        <button class="social-btn" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </button>
+                        <button class="social-btn" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </button>
+                        <button class="social-btn" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </button>
+                        <button class="social-btn" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> LOKTHIEK.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 id="modalTitle">Modal Title</h2>
+            <div id="modalBody">
+                <p>This is a modal dialog. You can put any content here!</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="modalConfirm">Confirm</button>
+                <button class="btn btn-secondary" id="modalCancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

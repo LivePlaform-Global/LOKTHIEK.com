@@ -1,0 +1,27 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+dist/
+build/
+*.log
+
+# Dependencies
+node_modules/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Executable files
+*.exe
+*.app
+*.dmg
+
+# Temporary files
+tmp/
+temp/
+*.tmp
