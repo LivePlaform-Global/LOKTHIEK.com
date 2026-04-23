@@ -1,0 +1,30 @@
+# Executables and installers
+*.exe
+*.msi
+*.dmg
+*.pkg
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Temporary files
+/tmp/
+*.tmp
+*.log
+
+# Node modules (if needed later)
+node_modules/
+package-lock.json
+
+# Build outputs
+dist/
+build/
